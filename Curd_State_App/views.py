@@ -57,28 +57,26 @@ class CityListView(generics.ListAPIView):
 
 
 
-class SubmitListView(generics.ListAPIView):
+class SubmitListView(APIView): 
     def post(self, request):
         country_id = request.data.get('country')
         state_id = request.data.get('state')
         city_id = request.data.get('city')
-        
+
         print(f"Received Data -> Country: {country_id}, State: {state_id}, City: {city_id}")
-        
-        # Check karein ki teeno IDs aayi hain ya nahi
+
         if not country_id or not state_id or not city_id:
             return Response({"error": "All fields (country, state, city) are required!"}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
-            # Database mein save karein
             userSelation.objects.create(
                 country_id=country_id,
                 state_id=state_id,
-                City_id=city_id  # Aapke model mein field ka naam 'City' (capital C) hai
+                City_id=city_id  
             )
-            
+
             return Response({"message": "Data successfully saved to database!"}, status=status.HTTP_201_CREATED)
-        
+
         except Exception as e:
-            print(f"Database Error: {str(e)}")  # Yeh terminal mein exact error dikhayega
+            print(f"Database Error: {str(e)}")
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
