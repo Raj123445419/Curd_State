@@ -34985,6 +34985,23 @@
     }
 },
 {
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1500000$GP0FjxfcX9vw2TySE7IZAa$1jkzBqPWeMMU2oEQ4U6B4HTf1XgrvvMCTx92q7OW2qY=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "r",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-08-14T09:21:57.552Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
     "model": "sessions.session",
     "pk": "b2hk8ixgffv6foc4d8cyugpg1n99og19",
     "fields": {
