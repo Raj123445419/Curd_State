@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-buc63_bd%2cj^%4%eeg2-c6!_gx7it_@ubkv+t%eq4e@8oxfkg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['curd-state.onrender.com']
 
 
 # Application definition
