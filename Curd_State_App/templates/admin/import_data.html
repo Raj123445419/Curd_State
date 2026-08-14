@@ -1,0 +1,19 @@
+{% extends "admin/base_site.html" %}
+{% block content %}
+<h1>Import States & Cities (Auto-Parser)</h1>
+<form method="post">
+    {% csrf_token %}
+    <label style="font-weight: bold;">Select Country:</label><br>
+    <select name="country" style="padding: 5px; width: 300px; margin-bottom: 15px;">
+        {% for c in countries %}
+            <option value="{{ c.id }}">{{ c.name }}</option>
+        {% endfor %}
+    </select><br>
+    
+    <label style="font-weight: bold;"> State AND City Ko alag karne keliye : Jaruri he  </label><br>
+    <p style="color: gray; font-size: 13px;"> </p>
+    <textarea name="raw_text" rows="15" style="width: 100%; padding: 10px; font-family: monospace;" placeholder="Andhra Pradesh: Visakhapatnam, Vijayawada, Guntur..."></textarea><br><br>
+    
+    <button type="submit" style="background: #417690; color: white; padding: 10px 20px; border: none; font-size: 16px; cursor: pointer;">Auto-Save All States & Cities</button>
+</form>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "admin/base_site.html" %}
+{% block content %}
+<h1>Bulk Add Cities</h1>
+<form method="post">
+    {% csrf_token %}
+    <label>Select State:</label><br>
+    <select name="state" style="padding: 5px; width: 300px; margin-bottom: 15px;">
+        {% for s in states %}
+            <option value="{{ s.id }}">{{ s.name }} ({{ s.country.name }})</option>
+        {% endfor %}
+    </select><br>
+    
+    <label> Enter Cities </label><br>
+    <textarea name="cities_text" rows="10" style="width: 100%; padding: 10px;"></textarea><br><br>
+    
+    <button type="submit" style="background: #417690; color: white; padding: 10px 20px; border: none;">Save All Cities</button>
+</form>
+{% endblock %}
