@@ -24,7 +24,7 @@ urlpatterns = [
     path('api/countries/',CountryListView.as_view(), name='country_list'),
     path('api/states/',StateListView.as_view(), name='state_list'),
     path('api/cities/',CityListView.as_view(), name='city-list'), 
-    path('api/submit/',SubmitListView.as_view(),name= 'submit')
+    path('',SubmitListView.as_view(),name= 'index-submit')
 
 
 
