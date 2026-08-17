@@ -17,14 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from Curd_State_App.views import CityListView, CountryListView, StateListView, SubmitListView
+from Curd_State_App.views import CityListView, CountryListView, StateListView, SubmitListView, ping_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/countries/',CountryListView.as_view(), name='country_list'),
     path('api/states/',StateListView.as_view(), name='state_list'),
     path('api/cities/',CityListView.as_view(), name='city-list'), 
-    path('',SubmitListView.as_view(),name= 'index-submit')
+    path('',SubmitListView.as_view(),name= 'index-submit'),
+    path('ping/', ping_view, name='ping'),
 
 
 

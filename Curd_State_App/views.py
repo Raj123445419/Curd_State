@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from rest_framework import generics, filters
 from rest_framework.views import APIView
@@ -8,7 +9,8 @@ from Curd_State_App.serializers import CitySerializer, CountrySerializer, StateS
 
 # Create your views here.
 
-
+def ping_view(request):
+    return HttpResponse("Alive!")
 
 
 
